@@ -1,42 +1,259 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Palmar's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <head>
-    
-    <title>
-      Mauricio Palmar's Portfolio Page
-    </title>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
 
-    <link rel="stylesheet" href="main.css"/>
-    
-  </head>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
 
-  <body>
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
 
-    <h1>Mauricio Palmar</h1>
-    <h2>Magazine Journalism student at Syracuse University</h2>
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
 
-    <img src="mpalmarheadshot.jpg" alt="Mauricio Palmar headshot"/>
+        .header h2 {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.95;
+            font-style: italic;
+        }
 
-    <br/>
-    
-    <p>Hello! I’m a student at Syracuse University currently studying Magazine, News and Digital Journalism at the S.I. Newhouse School of Public Communications. In my previous roles, I developed my writing skills and discovered my passion for journalism, covering a variety of different sports. Right now, I am currently an assistant sports editor at The Daily Orange, Syracuse's independent, student-run newspaper.</p>
+        .profile-section {
+            padding: 60px 40px;
+            text-align: center;
+            background: #f8f9fa;
+        }
 
-    <a href="https://dailyorange.com/writers/mauricio-palmar/" target="_blank">My Daily Orange Writing Samples</a>
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
 
-    <h2>My Best Clips</h2>
-    <ul>
-      <li>Dennis Cook</li>
-      <li>Bishop Grimes</li>
-      <li>Daniel Jackson</li>
-      <li>Henry Ford</li>
-      <li>Camdyn Nelson</li>
-      <li>Anna Croyle, Natalie Magnotta</li>
-      <li>Mia Klammer</li>
-      <li>Roy Simmons, Oren Lyons Alfie Jacques Award</li>
-      <li>Jackson Freeman Brewster Gamer</li>
-      <li>Syracuse Club Ski Team</li>
-    </ul>
-    
-  </body>
-  
+        .bio {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #dc143c;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #a01029;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.4);
+        }
+
+        .gallery-section {
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: #1e3c72;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .item-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+
+        .item-title {
+            font-size: 1.3em;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-weight: 600;
+            padding-right: 40px;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            font-family: 'Cambria', 'Cochin', Georgia, serif;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header h2 {
+                font-size: 1.1em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-section, .gallery-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mauricio Palmar</h1>
+            <h2>Magazine Journalism Student at Syracuse University</h2>
+        </div>
+
+        <div class="profile-section">
+            <img src="mpalmarheadshot.jpg" alt="Mauricio Palmar" class="profile-image">
+            
+            <p class="bio">
+                Hello! I'm a student at Syracuse University currently studying Magazine, News and Digital Journalism at the S.I. Newhouse School of Public Communications. In my previous roles, I developed my writing skills and discovered my passion for journalism, covering a variety of different sports. Right now, I am currently an assistant sports editor at The Daily Orange, Syracuse's independent, student-run newspaper.
+            </p>
+
+            <a href="https://dailyorange.com/writers/mauricio-palmar/" target="_blank" class="cta-button">
+                View All My Writing →
+            </a>
+        </div>
+
+        <div class="gallery-section">
+            <h2 class="section-title">Featured Stories</h2>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="item-number">1</div>
+                    <h3 class="item-title">Dennis Cook Feature</h3>
+                    <p class="item-description">A feature story about Chatham manager Dennis Cook, and his quest to find stability after his journeyman baseball career.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">2</div>
+                    <h3 class="item-title">Bishop Grimes Feature</h3>
+                    <p class="item-description">A feature story celebrating the athletic legacy of Bishop Grimes High School after its closure.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">3</div>
+                    <h3 class="item-title">Daniel Jackson Feature</h3>
+                    <p class="item-description">A feature story looking at Chatham catcher Daniel Jackson's emergence as one of the best hitters in the Cape Cod Baseball League.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">4</div>
+                    <h3 class="item-title">Henry Ford Feature</h3>
+                    <p class="item-description">A feature story about Chatham centerfielder Henry Ford, and his decision to leave his hometown to transfer to Tennessee.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">5</div>
+                    <h3 class="item-title">Camdyn Nelson Feature</h3>
+                    <p class="item-description">A feature story about freshman Syracuse point guard Camdyn Nelson for the Daily Orange's 2025 Basketball Guide.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">6</div>
+                    <h3 class="item-title">Anna Croyle & Natalie Magnotta Feature</h3>
+                    <p class="item-description">A feature story about the bond between Syracuse defenders Natalie Magnotta and Anna Croyle.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">7</div>
+                    <h3 class="item-title">Mia Klammer Feature</h3>
+                    <p class="item-description">A feature story focusing on fifth-year attacker Mia Klammer's attempt to end her career on a high note with SU.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">8</div>
+                    <h3 class="item-title">Roy Simmons & Oren Lyons Award</h3>
+                    <p class="item-description">Coverage of the prestigious Alfie Jacques Award ceremony honoring Roy Simmons and Oren Lyons.</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="item-number">9</div>
+                    <h3 class="item-title">Jackson Freeman Brewster Gamer</h3>
+                    <p class="item-description">A game story looking at Chatham outfielder Jackson Freeman's performance in the Anglers' win over Brewster.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
