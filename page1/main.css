@@ -1,3 +1,17 @@
+header {
+    border: 1px solid #2d0562;
+    border-radius: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    background-color:blanchedalmond;
+    color: darkslateblue;
+    text-align: center;
+    font-weight: 600;
+}
+
 h1{
     font-family:Georgia, 'Times New Roman', Times, serif; font-size: xx-large;
     text-align: center;
@@ -13,10 +27,9 @@ h2{
 }
 
 body {
-    background-color: cadetblue;
+    background-color:bisque;
     margin: 20px;
     padding: 5;
-    max-width: 800px;
 }
 
 p {
@@ -26,15 +39,27 @@ p {
 }
 
 a {
-    color:crimson;
+    color: orangered;
 }
 
 li{
     list-style: square;
+    text-align: center;
+    font-size: 18px;
 }
 
 img{
     display: inline-block;
     margin-left: auto;
     margin-right:auto;
+}
+
+.image1 {
+    width: 400px;
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 50px;
 }
