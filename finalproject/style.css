@@ -1,7 +1,7 @@
 body {
     margin: 10px;
     padding: 5px;
-    background-color: darkgreen;
+    background-color: lavenderblush;
 }
 
 h1 {
@@ -26,4 +26,12 @@ p {
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
+}
+
+div {
+    padding: 5px
+}
+
+li {
+    padding: 5px
 }
